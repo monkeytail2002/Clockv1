@@ -1,0 +1,41 @@
+package clock;
+
+//imports several prebuild Java classes
+import javax.swing.JFrame;  
+import javax.swing.JLabel;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.util.Date;
+
+
+
+
+public class Display extends JFrame {
+	
+  //Sets variables for the GUI
+	JLabel jlabClock;
+	JLabel mDay;
+  
+  //Sets the date variable as prebuilt Date Class object
+	Date date = new Date();
+
+	public Display()
+	{
+  
+    //Sets the clock face for display in the GUI
+		jlabClock = new JLabel(date.toString());  //Puts the date and time in the GUI
+    
+    //Sets the frame of the GUI to exit on pressing x
+		setLayout(new FlowLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    //sets the font and size for the clock in the GUI
+		jlabClock.setFont(new Font("sansserif",Font.BOLD,25));
+		add(jlabClock);
+		setSize(500,100);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+	}
+
+}
